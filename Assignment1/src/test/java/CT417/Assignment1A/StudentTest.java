@@ -1,8 +1,10 @@
-package CT417.Assignment1;
+package CT417.Assignment1A;
 
 import static org.junit.Assert.assertEquals;
 
 import org.junit.Test;
+
+import CT417.Assignment1A.Student;
 
 /**
  * Unit test for simple App.
