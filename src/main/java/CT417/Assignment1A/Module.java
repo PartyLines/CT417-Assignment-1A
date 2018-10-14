@@ -1,5 +1,6 @@
 package CT417.Assignment1A;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class Module {
@@ -24,13 +25,22 @@ public class Module {
 	public List<Student> getStudents() {
 		return students;
 	}
-	public void setStudents(List<Student> students) {
-		this.students = students;
-	}
 	public List<Course> getCourses() {
 		return courses;
 	}
-	public void setCourses(List<Course> courses) {
-		this.courses = courses;
+	
+	public void addStudents(Student... students) {
+		if (this.students == null) this.students = new ArrayList<>();
+		for (Student s : students) {
+			this.students.add(s);
+			s.addModules(this);
+		}
+	}
+	
+	public void addCourses(Course... courses) {
+		if (this.courses == null) this.courses = new ArrayList<>();
+		for (Course c : courses) {
+			this.courses.add(c);
+		}
 	}
 }

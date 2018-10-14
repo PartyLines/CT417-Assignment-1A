@@ -1,5 +1,6 @@
 package CT417.Assignment1A;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import org.joda.time.DateTime;
@@ -27,9 +28,6 @@ public class Course {
 	public List<Module> getModules() {
 		return modules;
 	}
-	public void setModules(List<Module> modules) {
-		this.modules = modules;
-	}
 	public DateTime getStartDate() {
 		return startDate;
 	}
@@ -43,5 +41,19 @@ public class Course {
 		this.endDate = endDate;
 	}
 	
+	public void addStudents(Student... students) {
+		if (this.students == null) this.students = new ArrayList<>();
+		for (Student s : students) {
+			this.students.add(s);
+			s.addCourses(this);
+		}
+	}
 	
+	public void addModules(Module... modules) {
+		if (this.modules == null) this.modules = new ArrayList<>();
+		for (Module m : modules) {
+			this.modules.add(m);
+			m.addCourses(this);
+		}
+	}
 }
