@@ -1,15 +1,15 @@
 package CT417.Assignment1A;
 
-import java.util.ArrayList;
-import java.util.List;
+import java.util.HashSet;
+import java.util.Set;
 
 import org.joda.time.DateTime;
 
 public class Course {
 	
 	private String name;
-	private List<Student> students;
-	private List<Module> modules;
+	private Set<Student> students;
+	private Set<Module> modules;
 	private DateTime startDate;
 	private DateTime endDate;
 	
@@ -19,13 +19,13 @@ public class Course {
 	public void setName(String name) {
 		this.name = name;
 	}
-	public List<Student> getStudents() {
+	public Set<Student> getStudents() {
 		return students;
 	}
-	public void setStudents(List<Student> students) {
+	public void setStudents(Set<Student> students) {
 		this.students = students;
 	}
-	public List<Module> getModules() {
+	public Set<Module> getModules() {
 		return modules;
 	}
 	public DateTime getStartDate() {
@@ -42,7 +42,7 @@ public class Course {
 	}
 	
 	public void addStudents(Student... students) {
-		if (this.students == null) this.students = new ArrayList<>();
+		if (this.students == null) this.students = new HashSet<>();
 		for (Student s : students) {
 			this.students.add(s);
 			s.addCourses(this);
@@ -50,7 +50,7 @@ public class Course {
 	}
 	
 	public void addModules(Module... modules) {
-		if (this.modules == null) this.modules = new ArrayList<>();
+		if (this.modules == null) this.modules = new HashSet<>();
 		for (Module m : modules) {
 			this.modules.add(m);
 			m.addCourses(this);

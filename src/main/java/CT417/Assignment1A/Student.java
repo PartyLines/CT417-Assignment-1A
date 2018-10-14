@@ -1,7 +1,7 @@
 package CT417.Assignment1A;
 
-import java.util.ArrayList;
-import java.util.List;
+import java.util.HashSet;
+import java.util.Set;
 
 import org.joda.time.DateTime;
 import org.joda.time.Years;
@@ -16,8 +16,8 @@ public class Student {
 	//Could potentially use LocalDate here, but DateTime is in requirements
 	private String id; 
 	//While student ID is numeric in NUIG, it could have letters in other universities
-	private List<Module> modules;
-	private List<Course> courses;
+	private Set<Module> modules;
+	private Set<Course> courses;
 	
 
 	public String getName() {
@@ -46,22 +46,22 @@ public class Student {
 	public String getUsername() {
 		return name.replaceAll(" ", "") + getAge();
 	}
-	public List<Module> getModules() {
+	public Set<Module> getModules() {
 		return modules;
 	}
-	public List<Course> getCourses() {
+	public Set<Course> getCourses() {
 		return courses;
 	}
 	
 	public void addModules(Module... modules) {
-		if (this.modules == null) this.modules = new ArrayList<>();
+		if (this.modules == null) this.modules = new HashSet<>();
 		for (Module m : modules) {
 			this.modules.add(m);
 		}
 	}
 	
 	public void addCourses(Course... courses) {
-		if (this.courses == null) this.courses = new ArrayList<>();
+		if (this.courses == null) this.courses = new HashSet<>();
 		for (Course c : courses) {
 			this.courses.add(c);
 		}

@@ -1,14 +1,14 @@
 package CT417.Assignment1A;
 
-import java.util.ArrayList;
-import java.util.List;
+import java.util.HashSet;
+import java.util.Set;
 
 public class Module {
 	
 	private String name;
 	private String id;
-	private List<Student> students;
-	private List<Course> courses;
+	private Set<Student> students;
+	private Set<Course> courses;
 	
 	public String getName() {
 		return name;
@@ -22,15 +22,15 @@ public class Module {
 	public void setId(String id) {
 		this.id = id;
 	}
-	public List<Student> getStudents() {
+	public Set<Student> getStudents() {
 		return students;
 	}
-	public List<Course> getCourses() {
+	public Set<Course> getCourses() {
 		return courses;
 	}
 	
 	public void addStudents(Student... students) {
-		if (this.students == null) this.students = new ArrayList<>();
+		if (this.students == null) this.students = new HashSet<>();
 		for (Student s : students) {
 			this.students.add(s);
 			s.addModules(this);
@@ -38,7 +38,7 @@ public class Module {
 	}
 	
 	public void addCourses(Course... courses) {
-		if (this.courses == null) this.courses = new ArrayList<>();
+		if (this.courses == null) this.courses = new HashSet<>();
 		for (Course c : courses) {
 			this.courses.add(c);
 		}
