@@ -3,7 +3,7 @@ jdk:
  - openjdk7
 build:
   ci:
-   - mvn -Dhttps.protocols=TLSv1.2 install -DskipTests=true 
+   - shippable_retry mvn install -DskipTests=true
 after_success:
   - mvn clean
   - mvn test
