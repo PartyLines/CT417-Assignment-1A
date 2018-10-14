@@ -1,6 +1,9 @@
 language: java
 jdk:
- - oraclejdk7
+ - openjdk7
+build:
+  ci:
+   - mvn -Dhttps.protocols=TLSv1.2 install -DskipTests=true 
 after_success:
   - mvn clean cobertura:cobertura
   - mvn test
