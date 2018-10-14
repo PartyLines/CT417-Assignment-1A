@@ -1,6 +1,6 @@
 language: java
 jdk:
- - openjdk7
+ - openjdk8
 build:
   ci:
    - shippable_retry mvn install -DskipTests=true
