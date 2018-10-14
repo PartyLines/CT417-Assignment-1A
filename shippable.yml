@@ -5,7 +5,7 @@ build:
   ci:
    - mvn -Dhttps.protocols=TLSv1.2 install -DskipTests=true 
 after_success:
-  - mvn clean cobertura:cobertura
+  - mvn clean
   - mvn test
 notifications:
   email:
