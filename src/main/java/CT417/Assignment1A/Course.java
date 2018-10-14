@@ -8,6 +8,7 @@ public class Course {
 	
 	private String name;
 	private List<Student> students;
+	private List<Module> modules;
 	private DateTime startDate;
 	private DateTime endDate;
 	
@@ -22,6 +23,12 @@ public class Course {
 	}
 	public void setStudents(List<Student> students) {
 		this.students = students;
+	}
+	public List<Module> getModules() {
+		return modules;
+	}
+	public void setModules(List<Module> modules) {
+		this.modules = modules;
 	}
 	public DateTime getStartDate() {
 		return startDate;
